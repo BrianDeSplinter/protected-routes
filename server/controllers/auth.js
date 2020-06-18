@@ -54,14 +54,14 @@ module.exports = {
     }
   },
   getUser: (req, res) => {
-    if(req?.session?.user){
+    if(req.session.user){
       return res.status(200).send(req.session.user)
     }
 
     res.status(404).send('No user currently logged in.')
   },
   logout: (req, res) => {
-    if(req?.session?.user){
+    if(req.session.user){
       req.session.destroy()
       return res.sendStatus(200)
     }
