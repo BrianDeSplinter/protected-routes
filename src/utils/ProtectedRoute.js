@@ -13,7 +13,7 @@ const ProtectedRoute = ({ exact = false, path, component, roles }) => {
 
   const checkRole = (roles) => {
     if (roles) {
-      return roles?.includes(roleId)
+      return roles.includes(roleId)
     }
 
     return true
@@ -26,7 +26,7 @@ const ProtectedRoute = ({ exact = false, path, component, roles }) => {
       ) : (
         <Redirect
           to={{
-            pathname: location?.state?.from ? location?.state?.from : '/' ,
+            pathname: location.state.from ? location.state.from : '/' ,
             state: { from: location.pathname }
           }}
         />
